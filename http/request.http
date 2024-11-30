@@ -23,8 +23,8 @@ Content-Type: application/json
   "password": "12"
 }
 
-### 레디스 추가
-POST localhost:3333/redis
+### member-projects 추가
+POST localhost:3333/member-projects
 Content-Type: application/json
 
 {
@@ -32,8 +32,8 @@ Content-Type: application/json
   "projectId": 3
 }
 
-### 레디스 제거
-DELETE localhost:3333/redis
+### member-projects 제거
+DELETE localhost:3333/member-projects
 Content-Type: application/json
 
 {
@@ -41,5 +41,5 @@ Content-Type: application/json
   "projectId": 3
 }
 
-### 레디스 조회
-GET localhost:3333/redis/123
+### member-projects 조회
+GET localhost:3333/member-projects/123
