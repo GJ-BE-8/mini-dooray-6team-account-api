@@ -1,24 +1,45 @@
 ### 사용자 등록
 
-POST localhost:8080/members/register
+POST localhost:3333/members/register
 Content-Type: application/json
 
 {
-  "memberId": "1",
+  "memberId": "123",
   "password": "12",
   "email": "email",
   "name": "member"
 }
 
 ### 사용자 조회
-GET localhost:8080/members/1
+GET localhost:3333/members/1
 
 
 ### 로그인
-POST localhost:8080/login
+POST localhost:3333/login
 Content-Type: application/json
 
 {
-  "memberId": "1",
+  "memberId": "123",
   "password": "12"
 }
+
+### 레디스 추가
+POST localhost:3333/redis
+Content-Type: application/json
+
+{
+  "memberId": "123",
+  "projectId": 3
+}
+
+### 레디스 제거
+DELETE localhost:3333/redis
+Content-Type: application/json
+
+{
+  "memberId": "123",
+  "projectId": 3
+}
+
+### 레디스 조회
+GET localhost:3333/redis/123

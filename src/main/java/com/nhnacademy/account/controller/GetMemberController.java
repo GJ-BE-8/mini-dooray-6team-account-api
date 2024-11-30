@@ -1,6 +1,6 @@
 package com.nhnacademy.account.controller;
 
-import com.nhnacademy.account.entity.Member;
+import com.nhnacademy.account.entity.member.Member;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

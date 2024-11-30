@@ -1,7 +1,7 @@
 package com.nhnacademy.account.repository;
 
-import com.nhnacademy.account.entity.Member;
-import com.nhnacademy.account.entity.Status;
+import com.nhnacademy.account.entity.member.Member;
+import com.nhnacademy.account.entity.member.Status;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

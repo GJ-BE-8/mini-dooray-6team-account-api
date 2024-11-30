@@ -1,4 +1,4 @@
-package com.nhnacademy.account.entity;
+package com.nhnacademy.account.entity.member;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

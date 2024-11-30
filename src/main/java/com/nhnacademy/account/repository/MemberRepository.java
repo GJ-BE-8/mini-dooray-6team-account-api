@@ -1,6 +1,6 @@
 package com.nhnacademy.account.repository;
 
-import com.nhnacademy.account.entity.Member;
+import com.nhnacademy.account.entity.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

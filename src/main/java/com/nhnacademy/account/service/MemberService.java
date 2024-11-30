@@ -1,8 +1,8 @@
 package com.nhnacademy.account.service;
 
 import com.nhnacademy.account.advice.exception.MemberAlreadyExistException;
-import com.nhnacademy.account.entity.Member;
-import com.nhnacademy.account.entity.Status;
+import com.nhnacademy.account.entity.member.Member;
+import com.nhnacademy.account.entity.member.Status;
 import com.nhnacademy.account.repository.MemberRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

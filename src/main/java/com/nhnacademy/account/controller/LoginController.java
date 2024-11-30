@@ -1,8 +1,8 @@
 package com.nhnacademy.account.controller;
 
 import com.nhnacademy.account.advice.exception.LoginFailException;
-import com.nhnacademy.account.entity.LoginRequest;
-import com.nhnacademy.account.entity.Member;
+import com.nhnacademy.account.entity.member.LoginRequest;
+import com.nhnacademy.account.entity.member.Member;
 import com.nhnacademy.account.service.MemberService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,8 +1,8 @@
 package com.nhnacademy.account.controller;
 
 
-import com.nhnacademy.account.entity.Member;
-import com.nhnacademy.account.entity.MemberCreateRequest;
+import com.nhnacademy.account.entity.member.Member;
+import com.nhnacademy.account.entity.member.MemberCreateRequest;
 import com.nhnacademy.account.service.MemberService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,13 +1,14 @@
-package com.nhnacademy.account.entity;
+package com.nhnacademy.account.entity.member;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @AllArgsConstructor
-public class StatusRequest {
+public class LoginRequest {
     private String memberId;
-    private Status status;
+    private String password;
 }
