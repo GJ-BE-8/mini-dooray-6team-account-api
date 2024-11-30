@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -41,14 +42,18 @@ public class ProjectMemberRepository {
     }
 
     // 삭제 memberId, projectId를 받아야함
-    public void deleteMemberProject(String memberId,long projectId) {
+    public void deleteMemberProject(String memberId, long projectId) {
         List<Long> memberProjects = getMemberProjects(memberId);
+        Iterator<Long> iterator = memberProjects.iterator();
 
-        for (Long memberProject : memberProjects) {
+        while (iterator.hasNext()) {
+            Long memberProject = iterator.next();
             if (memberProject.equals(projectId)) {
-                memberProjects.remove(projectId);
-                redisTemplate.opsForHash().put(HASH_NAME,memberId,memberProjects);
+                iterator.remove(); // Iterator를 통해 안전하게 삭제
             }
         }
+
+        redisTemplate.opsForHash().put(HASH_NAME, memberId, memberProjects);
     }
+
 }
