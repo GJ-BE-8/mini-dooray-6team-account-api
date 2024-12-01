@@ -29,7 +29,7 @@ Content-Type: application/json
 
 {
   "memberId": "123",
-  "projectId": 3
+  "projectId": 7
 }
 
 ### member-projects 제거
