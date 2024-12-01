@@ -19,26 +19,28 @@ public class ProjectMemberRepository {
     private String HASH_NAME = "member-projects:";
 
     // 넣어주고
+    // 멤버 프로젝트 추가
     public List<Long> addMemberProjects(String memberId, long projectId) {
         Object object = redisTemplate.opsForHash().get(HASH_NAME, memberId);
 
-        List<Long> list = (object != null) ?  (List<Long>) object : new ArrayList<>();
+        List<Long> list = (object != null) ? (List<Long>) object : new ArrayList<>();
+
+        // 중복 확인
+        if (list.contains(projectId)) {
+            throw new IllegalArgumentException("Project ID " + projectId + " already exists for member " + memberId);
+        }
+
         list.add(projectId);
 
-        redisTemplate.opsForHash().put(HASH_NAME,memberId,list);
+        redisTemplate.opsForHash().put(HASH_NAME, memberId, list);
         return list;
     }
 
+
     // 멤버가 가진 프로젝트들 가져오기
     public List<Long> getMemberProjects(String memberId) {
-        Map<Object, Object> entries = redisTemplate.opsForHash().entries(HASH_NAME);
-        List<Long> list = new ArrayList<>(entries.size());
-        for (Object o : entries.keySet()) {
-            if (o.equals(memberId)) {
-                list = (List<Long>) entries.get(memberId);
-            }
-        }
-        return list;
+        Object object = redisTemplate.opsForHash().get(HASH_NAME, memberId);
+        return (object != null) ? (List<Long>) object : new ArrayList<>();
     }
 
     // 삭제 memberId, projectId를 받아야함
